@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ROLL=$(cat /var/tlcam/series)
+SAVEDIR=/home/pi/CAMERA_OUTPUT
+
+# Capture an image every ~30 seconds
+
+while [ true ]; do
+   filename=$ROLL-$(date -u +"%d%m%Y_%H%M-%S").jpg
+   /usr/bin/raspistill -o $SAVEDIR/$filename
+   sleep 30;
+done;

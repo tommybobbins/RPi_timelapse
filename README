@@ -1,0 +1,15 @@
+Thanks to the mighty Andrew Back @9600 for the code and inspiration:
+
+http://designspark.com/blog/time-lapse-photography-with-the-raspberry-pi-camera
+
+Copy tlcam to /usr/local/bin
+Copy tlcam.sh to /etc/init.d/
+ln -s /etc/rc2.d/S99tlcam /etc/init.d/tlcam.sh (or use # insserv tlcam.sh)
+Reboot the Pi.
+
+Create the file stills.txt 
+$ cd ~/TIMELAPSE
+$ ls *.jpg >stills.txt
+Stitch the video together using 
+$ ./mencoder.sh
+Add soundtrack add_soundtrack.sh
